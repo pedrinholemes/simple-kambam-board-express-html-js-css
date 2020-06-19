@@ -1,0 +1,134 @@
+html {
+    font-family: 'Nunito';
+}
+
+body {
+    background-color: #130f0d;
+    color: white;
+}
+
+.boards {
+    display: flex;
+    margin-top: 32px;
+}
+
+.board {
+    background: #141316;
+    border: 1px solid #FD951F11;
+    border-radius: 4px;
+    margin: 0 16px;
+}
+
+.board h3 {
+    padding: 16px;
+    margin: 0;
+    color: #FD951Fcc;
+}
+
+.dropzone {
+    padding: 16px;
+    min-width: 282px;
+    min-height: 200px;
+}
+
+.card,
+.cardOff {
+    background-color: #1A1A1C;
+    padding: 16px;
+    box-shadow: 0 2px 2px -1px #FD951Fcc;
+    width: 250px;
+    margin: 25px 0;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.status {
+    width: 30px;
+    height: 8px;
+    background: gray;
+    margin-bottom: 16px;
+    margin-top: 3px;
+    border-radius: 8px;
+}
+
+.status.green {
+    background: #23d2ac;
+}
+
+.status.blue {
+    background: #33adff;
+}
+
+.status.red {
+    background: red;
+}
+
+.highlight {
+    background-color: #FD951F08;
+}
+
+.card,
+.dropzone {
+    transition: 400ms;
+}
+
+.is-dragging {
+    cursor: move;
+    opacity: 0.3;
+}
+
+.over {
+    background-color: #4cd13711;
+}
+
+.delete {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    font-size: 15px;
+    color: gray;
+    align-content: center;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+div.brands {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+div.settings {
+    padding: 16px;
+    width: 282px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+div.setting.board {
+    margin-top: 32px;
+}
+
+div.settings a {
+    text-decoration: none;
+    color: #fff;
+    transition: 400ms;
+}
+
+
+/* div.settings a:hover div.card, */
+
+div.settings a div.cardOff {
+    margin-left: 16px;
+}
+
+div.settings a:hover div.cardOff {
+    opacity: 0.5;
+}
+
+.content {
+    pointer-events: none;
+}

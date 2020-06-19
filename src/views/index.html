@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Kanban Board</title>
+        <link type="text/css" rel="stylesheet" href="/font-awesome.css" />
+
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800,900" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="boards">
+            <div class="board">
+                <h3>Todo</h3>
+                <div id="todo" class="dropzone">
+                    {% for item in rows %}
+                        {% if item.column == 0 %}
+                            <div class="card" draggable="true">
+                                <div class="brands">
+                                    <div class="status {{item.color}}"></div>
+                                    <div class="delete"><i data-id="{{item.id}}" data-title="{{item.title}}" class="fa fa-trash" aria-hidden="true"></i></div>
+                                </div>
+                                <div class="content">{{item.title}}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="board">
+                <h3>In progress</h3>
+                <div id="progress" class="dropzone">
+                    {% for item in rows %}
+                        {% if item.column == 1 %}
+                            <div class="card" draggable="true">
+                                <div class="brands">
+                                    <div class="status {{item.color}}"></div>
+                                    <div class="delete"><i data-id="{{item.id}}" data-title="{{item.title}}" class="fa fa-trash" aria-hidden="true"></i></div>
+                                </div>
+                                <div class="content">{{item.title}}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="board">
+                <h3>Done</h3>
+                <div id="done" class="dropzone">
+                    {% for item in rows %}
+                        {% if item.column == 2 %}
+                            <div class="card" draggable="true">
+                                <div class="brands">
+                                    <div class="status {{item.color}}"></div>
+                                    <div class="delete"><i data-id="{{item.id}}" data-title="{{item.title}}" class="fa fa-trash" aria-hidden="true"></i></div>
+                                </div>
+                                <div class="content">{{item.title}}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="setting board">
+            <h3>Settings</h3>
+            <div class="settings">
+                <a href="/create" target="_blank" rel="noopener noreferrer">
+                    <div class="cardOff" draggable="">
+                        <div class="status green"></div>
+                        <div class="content">Criar Ponto</div>
+                    </div>
+                </a>
+                <a href="/delete" target="_blank" rel="noopener noreferrer"></a>
+                <a href="/save" target="_blank" rel="noopener noreferrer">
+                    <div class="cardOff" draggable="">
+                        <div class="status blue"></div>
+                        <div class="content">Save</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <script src="script.js" defer="defer"></script>
+
+    </body>
+</html>
